@@ -1,0 +1,123 @@
+{% load staticfiles %}
+{% load blog_tags %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>清水谦和</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!--css-->
+
+		<link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+{#        <link rel="stylesheet" href="{% static 'blog/css/github.css' %}">#}
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="http://127.0.0.1:8000/">清水谦和</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="https://www.baidu.com/">百度</a></li>
+								<li><a href="http://music.163.com/#/user/home?id=325172809">私人音乐厅</a></li>
+								<li><a href="https://github.com/qingshuiqianhe/git">git仓库</a></li>
+								<li><a href="http://www.runningcheese.com/">runingcheese</a></li>
+								<li><a href="love">love</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="{% url 'blog:search' %}">
+										<input type="text" name="q" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Dolor sit amet</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Feugiat veroeros</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Etiam sed consequat</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions vertical">
+									<li><a href="#" class="button big fit">登陆</a></li>
+								</ul>
+							</section>
+
+					</section>
+                    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+
+				<!-- Main -->
+					<div id="main">
+                        <!--posts-->
+                        {% block posts %}
+                        {% endblock posts %}
+
+					</div>
+                <!--section-->
+                    <section id="sidebar">
+
+                    <!--文章列表-->
+                        {% block sidebar %}
+                        {% endblock sidebar %}
+
+                    </section>
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="{% static 'blog/js/jquery.min.js' %}"></script>
+			<script src="{% static 'blog/js/skel.min.js' %}"></script>
+			<script src="{% static 'blog/js/util.js' %}"></script>
+			<script src="{% static 'blog/js/main.js' %}"></script>
+
+
+	</body>
+</html>
